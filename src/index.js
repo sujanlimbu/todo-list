@@ -5,18 +5,37 @@ console.log('Hello from index.js');
 
 function component() {
   const element = document.createElement('div');
-  element.classList.add('main');
 
+  const header = document.createElement('header');
+  const navbar = document.createElement('nav');
+  const navlist = document.createElement('ul');
+
+  navlist.classList.add("nav-list");
+
+  const task = document.createElement('li');
+  const taskLink = document.createElement('a');
+  taskLink.href = "#task";
+  taskLink.textContent = "Task";
+  task.appendChild(taskLink);
+  navlist.appendChild(task);
+
+  const project = document.createElement('li');
+  const projectLink = document.createElement('a');
+  projectLink.href = "project";
+  projectLink.textContent = "Project";
+  project.appendChild(projectLink);
+  navlist.appendChild(project);
+
+  navbar.appendChild(navlist);
+  header.appendChild(navbar);
+  element.appendChild(header);
+
+  const contentDiv =document.createElement('div');
+  contentDiv.classList.add("content");
   const txt = document.createElement('H2')
   txt.textContent = 'My todo App is almost ready';
-  element.appendChild(txt);
-
-  const btnDiv = document.createElement('div');
-  const btn = document.createElement('button');
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = todo;
-  btnDiv.appendChild(btn);
-  element.appendChild(btnDiv);
+  contentDiv.appendChild(txt);
+  element.appendChild(contentDiv);
 
   return element;
 }

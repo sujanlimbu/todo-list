@@ -1,5 +1,5 @@
-import "./style.css";
-import todo from "./todo.js";
+import "./css/style.css";
+import todo from "./modules/todo.js";
 
 console.log('Hello from index.js');
 

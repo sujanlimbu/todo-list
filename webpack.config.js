@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    todo: './src/todo.js'
+    todo: './src/modules/todo.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
